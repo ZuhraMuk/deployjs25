@@ -1,6 +1,6 @@
 import { Grid, Pagination, Typography } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { productContext } from "../../../context/ProductContextProvider";
 import Filter from "../../Filter/Filter";
 import ProductCard from "../ProductCard/ProductCard";
@@ -13,6 +13,7 @@ const ProductsList = () => {
   const [category, setCategory] = useState("all");
   const [price, setPrice] = useState([0, 200000]);
   const [page, setPage] = useState(1);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (category === "all") {
@@ -37,6 +38,7 @@ const ProductsList = () => {
 
   useEffect(() => {
     readProduct();
+    navigate("/list");
   }, [paramsSearch, pageTotalCount]);
   return (
     <>
