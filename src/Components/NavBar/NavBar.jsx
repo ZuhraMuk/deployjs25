@@ -25,7 +25,7 @@ function NavBar() {
   const { basketCount } = React.useContext(basketContext);
 
   const { user, handleLogout } = React.useContext(authContext);
-  console.log(user);
+  // console.log(user);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
