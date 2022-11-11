@@ -53,6 +53,11 @@ export default function Authorization() {
 
   const navigate = useNavigate();
 
+  const signUp = () => {
+    handleSignUp();
+    navigate("/");
+  };
+
   const signIn = () => {
     handleLogin();
     navigate("/");
@@ -123,7 +128,7 @@ export default function Authorization() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
-                onClick={handleSignUp}>
+                onClick={signUp}>
                 Sign Up
               </Button>
             )}
